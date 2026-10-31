@@ -1,0 +1,57 @@
+[
+  {
+    "bank_code": "BOB",
+    "bank_name_gu": "બેંક ઓફ બરોડા (Bank of Baroda)",
+    "bank_name_en": "Bank of Baroda",
+    "toll_free_helpline": "18005700",
+    "cyber_fraud_number": "18002584455",
+    "sms_block_syntax": "BLOCK <Last 4 digits of Card>",
+    "sms_target_number": "8422009988",
+    "upi_block_steps_gu": "BOB M-Connect Plus એપમાં જઈ UPI સર્વિસ ડિસેબલ કરો અથવા 18005700 પર ડાયલ કરી 1 દબાવો.",
+    "is_primary_rural_bank": true
+  },
+  {
+    "bank_code": "SGB",
+    "bank_name_gu": "સૌરાષ્ટ્ર ગ્રામીણ બેંક (Saurashtra Gramin Bank)",
+    "bank_name_en": "Saurashtra Gramin Bank",
+    "toll_free_helpline": "18002330200",
+    "cyber_fraud_number": "02812482421",
+    "sms_block_syntax": "BLOCK CARD <Account Number>",
+    "sms_target_number": "9223008080",
+    "upi_block_steps_gu": "તમારા ગામના બેંક મિત્ર અથવા શાખા પ્રબંધકનો સંપર્ક કરો અને તાત્કાલિક ડેબિટ ફ્રીઝ કરાવો.",
+    "is_primary_rural_bank": true
+  },
+  {
+    "bank_code": "SBI",
+    "bank_name_gu": "સ્ટેટ બેંક ઓફ ઇન્ડિયા (State Bank of India)",
+    "bank_name_en": "State Bank of India",
+    "toll_free_helpline": "18001234",
+    "cyber_fraud_number": "1800111109",
+    "sms_block_syntax": "BLOCK <Last 4 digits of Card>",
+    "sms_target_number": "567676",
+    "upi_block_steps_gu": "YONO એપ અથવા ટોલ ફ્રી નંબર 18001234 પર કોલ કરીને તરત નેટબેન્કિંગ અને કાર્ડ બ્લોક કરો.",
+    "is_primary_rural_bank": true
+  },
+  {
+    "bank_code": "UBI",
+    "bank_name_gu": "યુનિયન બેંક ઓફ ઇન્ડિયા (Union Bank of India)",
+    "bank_name_en": "Union Bank of India",
+    "toll_free_helpline": "1800222244",
+    "cyber_fraud_number": "18002082244",
+    "sms_block_syntax": "UBLOCK <Last 4 digits of Card>",
+    "sms_target_number": "9223008486",
+    "upi_block_steps_gu": "યુનિયન બેંક હેલ્પલાઇન 1800222244 પર કોલ કરી તરત કાર્ડ હોલ્ટ કરાવો.",
+    "is_primary_rural_bank": false
+  },
+  {
+    "bank_code": "CBI",
+    "bank_name_gu": "સેન્ટ્રલ બેંક ઓફ ઇન્ડિયા (Central Bank of India)",
+    "bank_name_en": "Central Bank of India",
+    "toll_free_helpline": "1800221911",
+    "cyber_fraud_number": "18002001911",
+    "sms_block_syntax": "LOST <Card Number>",
+    "sms_target_number": "9967533228",
+    "upi_block_steps_gu": "1800221911 પર કોલ કરીને તાત્કાલિક એકાઉન્ટ સ્ટોપ કરાવો.",
+    "is_primary_rural_bank": false
+  }
+]

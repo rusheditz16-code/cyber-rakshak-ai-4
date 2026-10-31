@@ -1,0 +1,50 @@
+[
+  {
+    "taluka_id": "BOTAD_HQ",
+    "taluka_name_gu": "બોટાદ (મુખ્ય મથક)",
+    "taluka_name_en": "Botad",
+    "gram_panchayats_count": 52,
+    "egram_centers": 52,
+    "population_approx": 285000,
+    "scam_reports_this_month": 42,
+    "high_risk_alerts": 8,
+    "top_scam_category": "ELECTRICITY_BILL",
+    "risk_index": "MEDIUM"
+  },
+  {
+    "taluka_id": "GADHADA",
+    "taluka_name_gu": "ગઢડા",
+    "taluka_name_en": "Gadhada",
+    "gram_panchayats_count": 74,
+    "egram_centers": 74,
+    "population_approx": 210000,
+    "scam_reports_this_month": 68,
+    "high_risk_alerts": 19,
+    "top_scam_category": "PM_KISAN_SUBSIDY",
+    "risk_index": "HIGH"
+  },
+  {
+    "taluka_id": "BARWALA",
+    "taluka_name_gu": "બરવાળા",
+    "taluka_name_en": "Barwala",
+    "gram_panchayats_count": 31,
+    "egram_centers": 31,
+    "population_approx": 98000,
+    "scam_reports_this_month": 23,
+    "high_risk_alerts": 4,
+    "top_scam_category": "BANK_KYC_BLOCKED",
+    "risk_index": "LOW"
+  },
+  {
+    "taluka_id": "RANPUR",
+    "taluka_name_gu": "રાણપુર",
+    "taluka_name_en": "Ranpur",
+    "gram_panchayats_count": 35,
+    "egram_centers": 35,
+    "population_approx": 105000,
+    "scam_reports_this_month": 51,
+    "high_risk_alerts": 14,
+    "top_scam_category": "INSTANT_LOAN_APP",
+    "risk_index": "HIGH"
+  }
+]
