@@ -1,34 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
+import { Volume2, Pause } from 'lucide-react';
 import { playAudio, stopAudio } from '../utils/speechUtils';
 
-export default function AudioSpeaker({ audioUrl, label = "સાંભળો" }) {
+export default function AudioSpeaker({ audioUrl, speechText, label = "સાંભળો" }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     return () => {
       stopAudio();
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
     };
   }, []);
-
-  if (!audioUrl) return null;
 
   const handleToggle = () => {
     if (isPlaying) {
       stopAudio();
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
       setIsPlaying(false);
-    } else {
+      return;
+    }
+
+    if (audioUrl) {
       playAudio(
         audioUrl,
         () => setIsPlaying(true),
         () => setIsPlaying(false),
-        () => setIsPlaying(false)
+        () => {
+          // If server audio fails, fallback to browser speech synthesis
+          fallbackSpeech();
+        }
       );
+    } else {
+      fallbackSpeech();
+    }
+  };
+
+  const fallbackSpeech = () => {
+    const textToSpeak = speechText || label;
+    if ('speechSynthesis' in window && textToSpeak) {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.lang = 'gu-IN';
+      utterance.rate = 0.9; // natural rural speaking pace
+      utterance.onstart = () => setIsPlaying(true);
+      utterance.onend = () => setIsPlaying(false);
+      utterance.onerror = () => setIsPlaying(false);
+      window.speechSynthesis.speak(utterance);
+    } else {
+      setIsPlaying(false);
     }
   };
 
   return (
     <button
+      type="button"
       onClick={handleToggle}
       className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-semibold transition shadow-sm ${
         isPlaying

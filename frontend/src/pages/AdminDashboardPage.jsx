@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, TrendingUp, Users, AlertTriangle, Send, PlusCircle, Radio, CheckCircle, MapPin } from 'lucide-react';
+import { FALLBACK_METRICS } from '../utils/apiClient';
 
 export default function AdminDashboardPage() {
-  const [metrics, setMetrics] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [metrics, setMetrics] = useState(FALLBACK_METRICS);
+  const [loading, setLoading] = useState(false);
 
   // Broadcast Advisory State
   const [broadcastTaluka, setBroadcastTaluka] = useState('ALL');

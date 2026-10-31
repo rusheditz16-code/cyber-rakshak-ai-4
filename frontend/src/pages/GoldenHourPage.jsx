@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { PhoneCall, ShieldAlert, CreditCard, MessageSquare, AlertCircle, FileText, CheckCircle } from 'lucide-react';
 import ComplaintModal from '../components/ComplaintModal';
+import { FALLBACK_BANKS } from '../utils/apiClient';
 
 export default function GoldenHourPage() {
-  const [banks, setBanks] = useState([]);
-  const [selectedBank, setSelectedBank] = useState(null);
+  const [banks, setBanks] = useState(FALLBACK_BANKS);
+  const [selectedBank, setSelectedBank] = useState(FALLBACK_BANKS[0]);
   const [cardDigits, setCardDigits] = useState('');
   const [copiedSMS, setCopiedSMS] = useState(false);
 

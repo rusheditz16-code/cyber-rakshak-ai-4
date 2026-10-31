@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, ShieldCheck, HelpCircle, CheckCircle2, XCircle, Award } from 'lucide-react';
+import { FALLBACK_AWARENESS } from '../utils/apiClient';
 
 export default function AwarenessHubPage() {
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState(FALLBACK_AWARENESS);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showExplanation, setShowExplanation] = useState({});
 

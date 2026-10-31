@@ -6,6 +6,7 @@ import AudioSpeaker from '../components/AudioSpeaker';
 import PrivacyNoticeBadge from '../components/PrivacyNoticeBadge';
 import ComplaintModal from '../components/ComplaintModal';
 import { useLanguage } from '../context/LanguageContext';
+import { analyzeScamClient } from '../utils/apiClient';
 
 export default function ScamCheckerPage({ setActiveTab }) {
   const { t } = useLanguage();
@@ -66,8 +67,15 @@ export default function ScamCheckerPage({ setActiveTab }) {
       const data = await response.json();
       setResult(data);
     } catch (err) {
-      console.error(err);
-      setError('ચકાસણી દરમિયાન ક્ષતિ આવી. કૃપા કરીને ફરી પ્રયાસ કરો.');
+      console.warn("Backend unavailable, using client-side fallback analysis:", err);
+      // Seamless client-side zero-downtime fallback
+      const fallbackResult = analyzeScamClient(
+        inputText,
+        taluka,
+        hasLostMoney,
+        hasLostMoney && lostAmount ? parseFloat(lostAmount) : 0
+      );
+      setResult(fallbackResult);
     } finally {
       setLoading(false);
     }
@@ -258,9 +266,11 @@ export default function ScamCheckerPage({ setActiveTab }) {
                 {result.scam_name_gu}
               </h3>
             </div>
-            {result.audio_url && (
-              <AudioSpeaker audioUrl={result.audio_url} label="ઓડિયો સાંભળો (Voice Advice)" />
-            )}
+            <AudioSpeaker
+              audioUrl={result.audio_url}
+              speechText={result.speech_text || `${result.warning_gu} ${result.action_plan_gu}`}
+              label="ઓડિયો સાંભળો (Voice Advice)"
+            />
           </div>
 
           {/* Risk Traffic Light Meter */}
