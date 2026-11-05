@@ -322,7 +322,7 @@ export default function AdminDashboardPage() {
 
       {/* Pattern Modal */}
       {showPatternModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
           <div className="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-slate-200">
             <h3 className="font-bold text-lg text-slate-900">
               નવી સ્કેમ પેટર્ન ઉમેરો (Dynamic Scam Signature)

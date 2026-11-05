@@ -13,10 +13,12 @@ export default function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-900 selection:bg-emerald-200 selection:text-emerald-900">
+      <div className="min-h-[100dvh] bg-slate-50 flex flex-col font-sans text-slate-900 selection:bg-emerald-200 selection:text-emerald-900 overflow-x-hidden">
+        {/* Sticky Header with Emergency Banner */}
         <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        <main className="flex-1 pb-16">
+        {/* Main Content with Mobile Responsive Padding */}
+        <main className="flex-1 pt-2 sm:pt-4 pb-16 sm:pb-20">
           {activeTab === 'check' && <ScamCheckerPage setActiveTab={setActiveTab} />}
           {activeTab === 'chat' && <VoiceAssistantPage />}
           {activeTab === 'emergency' && <GoldenHourPage />}
@@ -25,7 +27,7 @@ export default function App() {
         </main>
 
         {/* Global Footer */}
-        <footer className="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+        <footer className="bg-slate-900 text-slate-400 text-xs py-6 sm:py-8 border-t border-slate-800 flex-shrink-0">
           <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
               <div className="flex items-center justify-center sm:justify-start gap-2 text-white font-bold text-sm">
