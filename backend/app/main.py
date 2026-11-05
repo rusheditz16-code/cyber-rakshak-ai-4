@@ -1,9 +1,16 @@
+import sys
+import os
+from pathlib import Path
+
+# Ensure backend directory is in sys.path for Vercel and local runs
+BACKEND_DIR = Path(__file__).resolve().parent.parent
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from pathlib import Path
-import os
 
 from app.api.routes_check import router as check_router
 from app.api.routes_chat import router as chat_router
